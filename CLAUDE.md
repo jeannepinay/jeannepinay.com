@@ -20,7 +20,7 @@ Single-page static academic website, served by GitHub Pages from the `main` bran
   - `files/cv.pdf` is linked from the CV item in the top menu.
   - `files/colonial-roots-of-nationalism.pdf` is linked from the paper title.
 - To update one, replace the file keeping the same name, so the links on the site and elsewhere keep working.
-- The CV source is `files/cv.tex` (kept out of git by `.gitignore`, so only the PDF is published; `files/cv-original.tex` is the owner's version before the October 2026 redesign).
+- The CV source is `files/cv.tex` (kept out of git by `.gitignore`, so only the PDF is published).
   - It uses EB Garamond and the site's navy, with `\entry{Title}{Date}{Details}` and `\paper{Title}{Details}` macros.
   - Build: copy it to a scratch folder, run `pdflatex cv.tex` twice, check it stays at 2 pages, then copy `cv.pdf` back to `files/`.
   - Update the "Last updated" footer date and keep co-authors, titles and abstracts consistent with `index.html`.
