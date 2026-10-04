@@ -1,0 +1,205 @@
+/* ==========================================================
+   Jeanne Pinay – personal website
+   Colours and fonts copied from the original Google Site.
+   ========================================================== */
+
+:root {
+  --navy: #323868;        /* dark blue bands (quote, RESEARCH, TEACHING, footer) */
+  --title-blue: #1c4587;  /* paper titles and sub-section titles */
+  --intro-blue: #073763;  /* biography text */
+  --text: #212121;        /* normal text */
+  --grey-band: #f2f2f2;   /* light grey sub-section bands */
+  --rule: #c7c7c7;
+  --serif: "EB Garamond", Garamond, Georgia, serif;
+  --sans: "Lato", Helvetica, Arial, sans-serif;
+  --max: 1080px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--text);
+  font-family: var(--serif);
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+a:hover { color: var(--title-blue); }
+
+p { margin: 0 0 0.25em; }
+
+.wrap {
+  display: block;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Top bar ---------- */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  padding: 18px 24px;
+}
+.site-name {
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.8);
+  text-decoration: none;
+}
+
+/* ---------- Banner and quote ---------- */
+.banner {
+  height: 280px;
+  background: url("images/banner.jpg") center / cover no-repeat;
+}
+.quote {
+  background: var(--navy);
+  color: #fff;
+  padding: 36px 48px;
+  text-align: right;
+  font-size: 18px;
+}
+
+/* ---------- About ---------- */
+.about {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 48px;
+  padding-top: 40px;
+  padding-bottom: 48px;
+}
+.about-side { text-align: center; }
+.portrait { width: 100%; height: auto; display: block; }
+.icons { display: flex; justify-content: center; gap: 12px; margin: 18px 0 12px; }
+.icons a { display: inline-flex; }
+.icons svg { display: block; }
+.cv-button {
+  display: block;
+  background: var(--navy);
+  color: #fff;
+  font-family: var(--sans);
+  font-size: 15px;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 2px;
+}
+.cv-button:hover { color: #fff; background: var(--title-blue); }
+.email { font-size: 16px; margin-top: 16px; }
+
+.about-text {
+  color: var(--intro-blue);
+  font-size: 21.5px;
+}
+.about-text p { margin-bottom: 0.9em; }
+
+/* ---------- Section bands ---------- */
+.band {
+  background: var(--navy);
+  color: #fff;
+  font-size: 31px;
+  font-weight: 700;
+  margin: 0;
+  padding: 26px 0;
+}
+.subband {
+  background: var(--grey-band);
+  color: var(--title-blue);
+  font-size: 27px;
+  font-style: italic;
+  font-weight: 700;
+  margin: 0 0 28px;
+  padding: 18px 0;
+}
+.subband + .wrap, .band + .wrap { margin-bottom: 40px; }
+.band + .wrap { padding-top: 28px; }
+
+/* ---------- Papers ---------- */
+.paper {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 40px;
+  align-items: start;
+  margin-bottom: 36px;
+}
+.paper img { width: 100%; height: auto; display: block; }
+.paper h4, .pub h4 {
+  color: var(--title-blue);
+  font-size: 22.5px;
+  font-weight: 700;
+  margin: 0 0 4px;
+  line-height: 1.25;
+}
+.paper h4 a, .pub h4 a { text-decoration: none; }
+.paper h4 a:hover, .pub h4 a:hover { text-decoration: underline; }
+
+details {
+  border-top: 1px solid var(--rule);
+  margin-top: 10px;
+}
+summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 8px 0;
+  font-family: var(--sans);
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--title-blue);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+summary::-webkit-details-marker { display: none; }
+summary::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  margin-right: 6px;
+  transition: transform 0.2s;
+}
+details[open] summary::after { transform: rotate(-135deg); }
+details p { text-align: justify; padding-bottom: 8px; }
+
+/* ---------- Publications and teaching ---------- */
+.pub-group { color: var(--title-blue); text-decoration: underline; margin-bottom: 18px; }
+.pub { margin-bottom: 22px; }
+.plain { font-weight: 400; color: var(--text); }
+
+/* ---------- Footer ---------- */
+.footer {
+  background: var(--navy);
+  color: #fff;
+  text-align: center;
+  font-size: 15px;
+  padding: 28px 16px;
+}
+
+/* ---------- Phones and small tablets ---------- */
+@media (max-width: 760px) {
+  body { font-size: 18px; }
+  .wrap { padding: 0 16px; }
+  .banner { height: 180px; }
+  .quote { padding: 24px 16px; font-size: 16px; }
+  .about { grid-template-columns: 1fr; gap: 28px; padding-top: 24px; }
+  .about-side { max-width: 340px; margin: 0 auto; width: 100%; }
+  .about-text { font-size: 19px; }
+  .band { font-size: 26px; padding: 20px 0; }
+  .subband { font-size: 23px; padding: 14px 0; }
+  .paper { grid-template-columns: 1fr; gap: 14px; }
+  .paper img { max-width: 320px; }
+  .paper h4, .pub h4 { font-size: 20px; }
+  details p { text-align: left; }
+}
