@@ -15,6 +15,13 @@ Single-page static academic website, served by GitHub Pages from the `main` bran
 - `<section id="teaching">` with the same `.entry` rows.
 - Footer: "Last updated <Month Year>". Update it whenever content changes.
 
+## Other pages and files
+- `italian-elections/index.html`: page showing the Streamlit app (https://itapolitics.streamlit.app, hosted by Streamlit) in an iframe with `?embed=true`. The "Interactive maps" button of the Colonial Roots paper links here.
+- `404.html`: page shown by GitHub Pages for any missing address. Subpages and 404 use absolute paths (`/style.css`).
+- `home/index.html`: redirects the old Google Sites address jeannepinay.com/home to the home page.
+- `fonts/`: EB Garamond and Lato served from the site (no Google Fonts requests, for visitor privacy). `fonts/fonts.css` must be linked before `style.css` on every page.
+- `sitemap.xml` and `robots.txt` for search engines; update `lastmod` in the sitemap when pages change. `index.html` also has schema.org Person data (JSON-LD) in the head; keep it in sync with affiliations and profiles.
+
 ## PDFs
 - The CV and working-paper PDFs live in `files/` and are linked directly (they open in the browser, no Google Drive).
   - `files/cv.pdf` is linked from the CV item in the top menu.
