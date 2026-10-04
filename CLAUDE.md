@@ -11,7 +11,7 @@ Single-page static academic website, served by GitHub Pages from the `main` bran
     - `<button class="paper-fig" data-full="images/NAME.gif">` holding `<video src="images/NAME-small.mp4" autoplay muted loop playsinline>`. Clicking opens the original GIF in the `#lightbox` dialog (GIF stays sharp; video looked grainy when enlarged).
     - `<div class="paper-meta">`: `<h4>` title, co-authors, status, then `<div class="paper-links">` with `.tag` buttons (Abstract, related project with an explicit label). No PDF button: the paper title is the PDF link, then `<div class="abstract" id="abstract-NAME" hidden>`.
     - The Abstract button needs `aria-controls="abstract-NAME"` matching the abstract's id; the script at the bottom of the page handles opening and closing.
-  - Publications and teaching are `.entry` blocks: title, co-authors, then journal in `<strong><em>` followed by the year or "forthcoming" in the same line (the owner does not want a separate date column). "Pre-doctoral publications" is a `.entries-note` label in grey capitals. Co-authors are written "with A, B, and C" without parentheses.
+  - Publications and teaching are `.entry` blocks: title, co-authors, then journal in `<strong><em>` followed by the year or "forthcoming" in the same line (the owner does not want a separate date column). "Pre-doctoral publications" is a `.entries-note` label in grey capitals. Co-authors are written "with A, B, and C" without parentheses, in alphabetical order by surname on the website (in the CV they follow the order of the publication).
 - `<section id="teaching">` with the same `.entry` rows.
 - Footer: "Last updated <Month Year>". Update it whenever content changes.
 
