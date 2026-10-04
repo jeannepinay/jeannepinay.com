@@ -244,6 +244,13 @@ p { margin: 0 0 0.3em; }
   padding: 4px 8px 3px;
 }
 .status + .paper-links { margin-top: 8px; }
+/* "Submitted" and "Abstract" share the same width, text centred
+   (text-indent offsets the extra letter-spacing after the last letter) */
+.status, .tag[aria-controls] {
+  width: 96px;
+  text-align: center;
+  text-indent: 0.14em;
+}
 
 /* Small buttons under each paper: Abstract, related project */
 .paper-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
