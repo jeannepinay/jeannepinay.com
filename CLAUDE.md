@@ -4,7 +4,7 @@ Single-page static academic website, served by GitHub Pages from the `main` bran
 
 ## Structure of index.html
 - Top bar: name and menu (Research, Publications, Teaching, CV). Publications is hidden on phones. The CV link lives only in this menu.
-- Banner: plain old world map (no text on it, the owner prefers it that way), then the Marc Bloch quote with its English translation (`.quote-translation`).
+- Banner: plain old world map (no text on it, the owner prefers it that way): Henricus Hondius II, Nova Totius Terrarum Orbis Geographica ac Hydrographica Tabula, 1630 (Latin, public domain, Wikimedia Commons), cropped as a wide band across both hemispheres that always includes Europe (the owner wants the wide view, with Europe guaranteed in frame); `background-position` is tuned separately for phones, then the Marc Bloch quote with its English translation (`.quote-translation`).
 - About: portrait on the left, always exactly as tall as the biography block (the text sets the height; the photo is cropped with object-fit: cover; on phones it stacks at natural size); biography on the right, ending with a `.contact` row (LinkedIn and Google Scholar icons, email).
 - `<section id="research">` with `<h2 class="section-title">` and `<h3 class="sub-title">` sub-sections: Working Papers, Work in Progress, Publications (`id="publications"`).
   - Each paper is an `<article class="paper">`:
