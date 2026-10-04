@@ -239,8 +239,9 @@ p { margin: 0 0 0.3em; }
   line-height: 1;
   color: #fff;
   background: var(--navy);
+  border: 1px solid var(--navy);
   border-radius: 2px;
-  padding: 5px 9px 4px;
+  padding: 4px 8px 3px;
 }
 .status + .paper-links { margin-top: 8px; }
 
@@ -249,15 +250,15 @@ p { margin: 0 0 0.3em; }
 .tag {
   display: inline-block;
   font-family: var(--sans);
-  font-size: 12px;
-  letter-spacing: 0.1em;
+  font-size: 11px;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   line-height: 1;
   color: var(--navy);
   background: #fff;
   border: 1px solid var(--navy);
   border-radius: 2px;
-  padding: 7px 11px 6px;
+  padding: 4px 8px 3px;
   text-decoration: none;
   cursor: pointer;
   transition: background 0.15s, color 0.15s;
