@@ -162,7 +162,7 @@ p { margin: 0 0 0.3em; }
   display: flex;
   align-items: center;
   gap: 18px;
-  color: var(--title-blue);
+  color: var(--navy);       /* same as the section titles */
   font-size: 25px;
   font-style: italic;
   font-weight: 700;
