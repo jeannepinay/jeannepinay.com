@@ -46,4 +46,5 @@ Single-page static academic website, served by GitHub Pages from the `main` bran
 - Images go in `images/` with short lowercase names.
 - Check the layout at phone width (375px) and at a narrow window (600px) before committing.
 - Preview locally with `python3 -m http.server 8000` and open http://localhost:8000.
+- When `style.css` changes, bump the `?v=` number on its `<link>` in `index.html`, `404.html` and `italian-elections/index.html` (use the current date and time), so browsers load the new version instead of a cached one.
 - After changes: commit with a short message and push to `main`.
