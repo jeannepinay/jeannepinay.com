@@ -20,7 +20,7 @@ Single-page static academic website, served by GitHub Pages from the `main` bran
 - `404.html`: page shown by GitHub Pages for any missing address. Subpages and 404 use absolute paths (`/style.css`).
 - `home/index.html`: redirects the old Google Sites address jeannepinay.com/home to the home page.
 - `fonts/`: EB Garamond and Lato served from the site (no Google Fonts requests, for visitor privacy). `fonts/fonts.css` must be linked before `style.css` on every page.
-- `analytics.js`: Google Analytics (GA4) behind a consent banner. The gtag script is loaded only after the visitor clicks Accept; the choice is stored in localStorage (`analytics-consent`), and the footer link `.cookie-settings` reopens the banner. The measurement ID is the `GA_ID` constant at the top of the file. Included with `defer` on `index.html`, `italian-elections/index.html` and `404.html`. (GoatCounter and Cloudflare Web Analytics were tried first; the owner could not set them up.)
+- `analytics.js`: Google Analytics (GA4, measurement ID G-DVQKSZ3JN3) loaded on every page, included with `defer` on `index.html`, `italian-elections/index.html` and `404.html`. The owner chose not to show a cookie consent banner (she was told this is not GDPR-compliant). GoatCounter and Cloudflare Web Analytics were tried first; she could not set them up.
 - `sitemap.xml` and `robots.txt` for search engines; update `lastmod` in the sitemap when pages change. `index.html` also has schema.org Person data (JSON-LD) in the head; keep it in sync with affiliations and profiles.
 
 ## PDFs

@@ -411,33 +411,3 @@ p { margin: 0 0 0.3em; }
 /* ---------- Page not found ---------- */
 .not-found { padding-top: 48px; padding-bottom: 64px; min-height: 40vh; }
 .not-found p { color: var(--intro-blue); font-size: 21px; }
-
-/* ---------- Cookie consent banner (Google Analytics) ---------- */
-#consent {
-  position: fixed;
-  left: 50%;
-  bottom: 20px;
-  transform: translateX(-50%);
-  z-index: 20;
-  width: min(640px, calc(100% - 32px));
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  padding: 14px 18px;
-  background: #fff;
-  border: 1px solid var(--rule);
-  border-left: 4px solid var(--navy);
-  border-radius: 4px;
-  box-shadow: 0 8px 28px rgba(20, 22, 45, 0.18);
-  font-family: var(--sans);
-}
-#consent p { margin: 0; font-size: 14px; line-height: 1.45; color: var(--text); }
-.consent-buttons { display: flex; gap: 8px; flex: none; }
-#consent .consent-accept { background: var(--navy); color: #fff; }
-#consent .consent-accept:hover { background: var(--title-blue); border-color: var(--title-blue); }
-.footer .cookie-settings { color: #fff; opacity: 0.75; font-size: 13px; }
-.footer .cookie-settings:hover { opacity: 1; }
-@media (max-width: 520px) {
-  #consent { flex-direction: column; align-items: stretch; gap: 12px; bottom: 12px; }
-  .consent-buttons { justify-content: flex-end; }
-}
