@@ -319,7 +319,7 @@ p { margin: 0 0 0.3em; }
   cursor: zoom-out;
 }
 #lightbox::backdrop { background: rgba(20, 22, 45, 0.85); }
-#lightbox img {
+#lightbox img, #lightbox video {
   display: block;
   max-width: 94vw;
   max-height: 92vh;

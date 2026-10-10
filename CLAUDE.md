@@ -34,7 +34,9 @@ Single-page static academic website, served by GitHub Pages from the `main` bran
   - Update the "Last updated" footer date and keep co-authors, titles and abstracts consistent with `index.html`.
 
 ## Paper animations
-- The page shows light MP4 thumbnails; the original GIFs in `images/` are used for the enlarged view.
+- The page shows MP4 thumbnails; the enlarged view shows whatever `data-full` points to: a GIF (shown as an image) or an MP4 (played as a muted looping video).
+  - Colonial Roots and Offshore Oil: `NAME-small.mp4` thumbnail, original GIF enlarged.
+  - Europenses: the owner's own `images/muslim_raids.mp4` (1120x840, already light) is used both as thumbnail and enlarged view. When she supplies an updated MP4, use it directly the same way.
 - To convert a new GIF, compile and run the converter (needs only Xcode command line tools):
   `swiftc -O tools/gif2mp4.swift -o /tmp/gif2mp4`
   `/tmp/gif2mp4 images/NAME.gif images/NAME-small.mp4 480 140000` (thumbnail shown in the page)

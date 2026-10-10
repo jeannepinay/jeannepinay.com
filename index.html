@@ -23,7 +23,7 @@
 
   <!-- Fonts are hosted on this site: no visitor data is sent to Google -->
   <link rel="stylesheet" href="fonts/fonts.css">
-  <link rel="stylesheet" href="style.css?v=202610081033">
+  <link rel="stylesheet" href="style.css?v=202610081559">
 
   <!-- Information for search engines (not visible on the page) -->
   <link rel="canonical" href="https://jeannepinay.com/">
@@ -126,8 +126,8 @@
       <h3 class="sub-title">Work in Progress</h3>
 
       <article class="paper">
-        <button type="button" class="paper-fig" data-full="images/europenses.gif" aria-label="Enlarge animated map: Muslim raids on Latin Christendom">
-          <video src="images/europenses-small.mp4" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
+        <button type="button" class="paper-fig" data-full="images/muslim_raids.mp4" aria-label="Enlarge animated map: Muslim raids on Latin Christendom">
+          <video src="images/muslim_raids.mp4" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
         </button>
         <div class="paper-meta">
           <h4><em>Europenses:</em> The Making of a Christian European Identity in the Middle Ages</h4>
@@ -209,9 +209,10 @@
     <p>Last updated October 2026</p>
   </footer>
 
-  <!-- Full-screen view for the animated maps (original GIFs, sharper than video) -->
+  <!-- Full-screen view for the animated maps (GIF or full-resolution MP4) -->
   <dialog id="lightbox" aria-label="Enlarged map">
     <img src="" alt="">
+    <video muted loop playsinline hidden></video>
     <button type="button" class="lightbox-close" aria-label="Close">&times;</button>
   </dialog>
 
@@ -229,14 +230,31 @@
     // Click on a map: open the full-size version
     const box = document.getElementById('lightbox');
     const boxImg = box.querySelector('img');
+    const boxVideo = box.querySelector('video');
+    boxVideo.addEventListener('canplay', () => { if (box.open) boxVideo.play().catch(() => {}); });
     document.querySelectorAll('.paper-fig').forEach(fig => {
       fig.addEventListener('click', () => {
-        boxImg.src = fig.dataset.full;
-        boxImg.alt = fig.getAttribute('aria-label').replace('Enlarge ', '');
-        box.showModal();
+        const isVideo = fig.dataset.full.endsWith('.mp4');
+        boxImg.hidden = isVideo;
+        boxVideo.hidden = !isVideo;
+        if (isVideo) {
+          boxVideo.muted = true;
+          boxVideo.autoplay = true;
+          boxVideo.src = fig.dataset.full;
+          box.showModal();
+          boxVideo.play().catch(() => {});
+        } else {
+          boxImg.src = fig.dataset.full;
+          boxImg.alt = fig.getAttribute('aria-label').replace('Enlarge ', '');
+          box.showModal();
+        }
       });
     });
-    box.addEventListener('close', () => { boxImg.removeAttribute('src'); });
+    box.addEventListener('close', () => {
+      if (box.open) return;                 // reopened in the meantime: keep the new content
+      boxImg.removeAttribute('src');
+      boxVideo.pause(); boxVideo.removeAttribute('src'); boxVideo.load();
+    });
     box.addEventListener('click', () => box.close());
 
     // Respect visitors who ask their device for less motion
