@@ -126,8 +126,8 @@
       <h3 class="sub-title">Work in Progress</h3>
 
       <article class="paper">
-        <button type="button" class="paper-fig" data-full="images/muslim_raids.mp4" aria-label="Enlarge animated map: Muslim raids on Latin Christendom">
-          <video src="images/muslim_raids.mp4" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
+        <button type="button" class="paper-fig" data-full="images/muslim_raids.mp4?v=20261015" aria-label="Enlarge animated map: Muslim raids on Latin Christendom">
+          <video src="images/muslim_raids.mp4?v=20261015" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
         </button>
         <div class="paper-meta">
           <h4><em>Europenses:</em> The Making of a Christian European Identity in the Middle Ages</h4>
@@ -136,7 +136,7 @@
             <button type="button" class="tag" aria-expanded="false" aria-controls="abstract-europenses">Abstract</button>
           </div>
           <div class="abstract" id="abstract-europenses" hidden>
-            <p>In progress!</p>
+            <p>Historians agree that Europe is the secular descendant of Christendom, and that it emerged in the Middle Ages. Yet, what made Christendom a political community remains an open question. In this article, we conjecture and empirically test the idea according to which Christendom became a political entity as a result of the religious and social conflict against Islam. Using a corpus of nearly 13,000 texts from the Latin Text Archive (chronicles, letters, sermons, charters) written over 200–1500 (mostly by clerics), we first show that Christendom is framed as a political entity significantly more often when the Muslims are also mentioned and framed as a threat. By contrast, when the Muslims are mentioned but not framed as a threat, Christendom is framed as a religious community. This suggests that Islam, when perceived as a threat by the Christians, contributed to turning Christendom into a political entity. Second, we use both Latin and Arabic written sources to geo-localize the Muslim raids on Latin Christendom from the conquest of the Iberian Peninsula in 711. We identify the date and location of 194 raids over 711–1074 and build a city-level measure of exposure to the Muslim raids. Using data on crusaders' origins, we then study the effect of these raids on crusade participation in 1096–1204, using the cost of reaching each city (by sea and/or land) as an instrument. We show that exposure to the Muslim raids significantly increased the likelihood of crusade participation. Taken together, our results suggest that the Muslim raids on Latin Christendom contributed to strengthening the Christian identity and to the emergence of Europe as a political entity.</p>
           </div>
         </div>
       </article>
@@ -234,7 +234,7 @@
     boxVideo.addEventListener('canplay', () => { if (box.open) boxVideo.play().catch(() => {}); });
     document.querySelectorAll('.paper-fig').forEach(fig => {
       fig.addEventListener('click', () => {
-        const isVideo = fig.dataset.full.endsWith('.mp4');
+        const isVideo = /\.mp4(\?|$)/.test(fig.dataset.full);
         boxImg.hidden = isVideo;
         boxVideo.hidden = !isVideo;
         if (isVideo) {

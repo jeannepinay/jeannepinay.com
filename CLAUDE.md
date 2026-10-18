@@ -32,11 +32,12 @@ Single-page static academic website, served by GitHub Pages from the `main` bran
   - It uses EB Garamond and the site's navy, with `\entry{Title}{Date}{Details}` and `\paper{Title}{Details}` macros.
   - Build: copy it to a scratch folder, run `pdflatex cv.tex` twice, check it stays at 2 pages, then copy `cv.pdf` back to `files/`.
   - Update the "Last updated" footer date and keep co-authors, titles and abstracts consistent with `index.html`.
+  - The CV must stay on 2 pages; with all abstracts it only just fits (margins 1.5/1.7 cm, tight section spacing). If new content pushes it to 3 pages, tighten spacing rather than shrinking the text, and tell the owner.
 
 ## Paper animations
 - The page shows MP4 thumbnails; the enlarged view shows whatever `data-full` points to: a GIF (shown as an image) or an MP4 (played as a muted looping video).
   - Colonial Roots and Offshore Oil: `NAME-small.mp4` thumbnail, original GIF enlarged.
-  - Europenses: the owner's own `images/muslim_raids.mp4` (1120x840, already light) is used both as thumbnail and enlarged view. When she supplies an updated MP4, use it directly the same way.
+  - Europenses: the owner's own `images/muslim_raids.mp4` (1120x840, already light) is used both as thumbnail and enlarged view. When she supplies an updated MP4 with the same name, bump the `?v=` date on both `src` and `data-full` so browsers do not show the cached old video.
 - To convert a new GIF, compile and run the converter (needs only Xcode command line tools):
   `swiftc -O tools/gif2mp4.swift -o /tmp/gif2mp4`
   `/tmp/gif2mp4 images/NAME.gif images/NAME-small.mp4 480 140000` (thumbnail shown in the page)
