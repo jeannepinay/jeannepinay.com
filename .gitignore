@@ -4,3 +4,4 @@ files/*.tex
 files/*.aux
 files/*.log
 files/*.out
+files/*.synctex.gz
