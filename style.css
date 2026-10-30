@@ -296,6 +296,7 @@ p { margin: 0 0 0.3em; }
 .entry p strong, .entry p em { color: var(--text); }
 .plain { font-weight: 400; color: var(--text); }
 .quiet-link { text-decoration: none; }
+.entry p .quiet-link em { color: inherit; }
 .quiet-link:hover { text-decoration: underline; }
 
 /* ---------- Footer ---------- */
